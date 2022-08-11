@@ -1,7 +1,7 @@
-continua == "SIM"
+continua = "SIM"
 
 while continua == "SIM":
-    
+
     nivelAcesso = input("Insira o nível de acesso:").upper()
 
     if nivelAcesso == "ADM" or nivelAcesso == "USR":

@@ -3,6 +3,6 @@ i = 1
 
 while i <= numero:
     print(str(i), "\t")
-    i = i+1
+    i = i + 1
 
 print("Loop encerrado...")

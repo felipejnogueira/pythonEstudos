@@ -7,7 +7,6 @@ print(nome + " trabalha na empresa " + empresa)
 print("Possui:", qtdeFuncionarios, "funcionários.")
 print("A média da mensalidade é de:", str(mediaMensalidade))
 
-
 print("==============Verifique os tipos de dados abaixo:==============")
 print("O tipo de dado da variavel [nome] é:", type(nome))
 print("O tipo de dado da variavel [empresa] é:", type(empresa))
