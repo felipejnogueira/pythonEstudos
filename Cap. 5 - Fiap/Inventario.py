@@ -15,7 +15,9 @@ while opcao != 4:
         case 3:
             linhas = lerArquivo()
             for linha in linhas:
-                print(linha)
+                while len(linha) > 0:
+                    print(linha[0:linha.find(';')])
+                    linha = linha[linha.find(';')+1:-1]
         case 4:
             break
 
