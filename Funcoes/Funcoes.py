@@ -50,3 +50,20 @@ def resumirValores(lista):
         print("O equipamento mais baratto custa R$", min(valores))
         print("O valor total dos equipamentos é de R$", sum(valores))
 
+def registrarPatrimonio(inventario):
+    resp = "S"
+    while resp == "S":
+        inventario[input("Digite o número patrimonial: ")] = [input("Digite a data da última atualização: "),
+                                                              input("Digite a descrição: "),
+                                                              input("Digite o departamento: ")]
+        resp = input("Digite <S> para continuar: ").upper()
+
+def salvarArquivo(inventario):
+    with open(input(r"Digite o Caminho\nome_arquivo para salvar:")+".csv", "a") as arq:
+        for chave, valor in inventario.items():
+            arq.write(chave + ";" + valor[0] + ";" + valor[1] + ";" + valor[2])
+        print("Arquivo salvo!")
+
+def lerArquivo():
+    with open(input(r"Digite o caminho\nome_arquivo.ext para ler"), "r") as arq:
+        print(arq.readlines())
