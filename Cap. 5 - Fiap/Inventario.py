@@ -13,7 +13,9 @@ while opcao != 4:
         case 2:
             salvarArquivo(inventario)
         case 3:
-            lerArquivo()
+            linhas = lerArquivo()
+            for linha in linhas:
+                print(linha)
         case 4:
             break
 

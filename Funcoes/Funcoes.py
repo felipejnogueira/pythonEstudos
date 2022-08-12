@@ -61,9 +61,9 @@ def registrarPatrimonio(inventario):
 def salvarArquivo(inventario):
     with open(input(r"Digite o Caminho\nome_arquivo para salvar:")+".csv", "a") as arq:
         for chave, valor in inventario.items():
-            arq.write(chave + ";" + valor[0] + ";" + valor[1] + ";" + valor[2])
+            arq.write(chave + ";" + valor[0] + ";" + valor[1] + ";" + valor[2] + "\n")
         print("Arquivo salvo!")
 
 def lerArquivo():
     with open(input(r"Digite o caminho\nome_arquivo.ext para ler"), "r") as arq:
-        print(arq.readlines())
+        return arq.readlines()
