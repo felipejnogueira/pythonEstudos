@@ -1,3 +1,6 @@
+import json
+
+
 def preencherInventario(lista):
     resp = "S"
 
@@ -67,3 +70,16 @@ def salvarArquivo(inventario):
 def lerArquivo():
     with open(input(r"Digite o caminho\nome_arquivo.ext para ler"), "r") as arq:
         return arq.readlines()
+
+def salvarJson(inventario):
+    with open(input(r"Digite o Caminho\nome_arquivo para salvar:")+".csv","w") as arq:
+        json.dump(inventario, arq)
+    print("Arquivo salvo!")
+
+def lerJson():
+    with open(input(r"Digite o caminho\nome_arquivo.ext para ler"), "r") as arq:
+        resultado = json.load(arq)
+        for chave, dado in resultado.items():
+            print("Data:", dado[0])
+            print("Descrição:", dado[1])
+            print("Departamento:", dado[2])
