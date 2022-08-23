@@ -24,5 +24,5 @@ localizacao = arquivo["1"]
 geolocator = Nominatim(user_agent="wazeyes") #Nome do app
 
 location = geolocator.geocode(localizacao[0] + "," + localizacao[1] + "," + localizacao[2])
-print(location.address)
-print((location.latitude, location.longitude))
+saida = {"coordenadas": (location.latitude, location.longitude)}
+salvarJson(saida, path+"2")
