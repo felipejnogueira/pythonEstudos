@@ -1,4 +1,5 @@
 import json
+import os.path
 
 
 def preencherInventario(lista):
@@ -81,16 +82,17 @@ def lerArquivo():
         return arq.readlines()
 
 
-def salvarJson(inventario, path):
-    with open(input(r"Digite o Caminho\nome_arquivo para salvar:")+".json","w") as arq:
-        json.dump(inventario, arq)
+def salvarJson(lista, path):
+    with open(path+".json", "w") as arq:
+        json.dump(lista, arq)
     print("Arquivo salvo!")
 
 
 def lerJson(path):
-    with open(path, "r") as arq:
-        resultado = json.load(arq)
-        for chave, dado in resultado.items():
-            print("Data:", dado[0])
-            print("Descrição:", dado[1])
-            print("Departamento:", dado[2])
+    if os.path.exists(path+".json"):
+        with open(path+".json", "r") as arq:
+            resultado = json.load(arq)
+    else:
+        resultado = {}
+
+    return resultado

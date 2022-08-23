@@ -1,5 +1,6 @@
 ## Importando biblioteca json
-import os, json
+import os
+import json
 from Funcoes.Funcoes import *
 
 def opcoes():
@@ -7,14 +8,13 @@ def opcoes():
 
 
 # Pegando caminho do arquivo
-path = input(r"Digite o caminho\nome_arquivo.ext para ler")
+path = input(r"Digite o caminho\nome_arquivo para ler")
 
 # Carregando arquivo na variavel de inventario
-with open(path, "r") as arquivo:
-    if os.path.exists(path):
-        inventario = json.load("path")
-    else:
-        inventario = {}
+if os.path.exists(path):
+    inventario = json.load(path)
+else:
+    inventario = {}
 
 # Menu de opções
 opcao = opcoes()
@@ -28,7 +28,11 @@ while opcao != 4:
             salvarJson(inventario, path)
         # Exibir
         case 3:
-            lerJson()
+            arquivo = lerJson(path)
+            for chave, dado in arquivo.items():
+                print("Data:", dado[0])
+                print("Descrição:", dado[1])
+                print("Departamento:", dado[2])
         # Encerrar
         case 4:
             break
